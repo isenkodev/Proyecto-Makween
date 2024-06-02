@@ -1,0 +1,712 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&subset=greek,cyrillic');
+
+body {
+    background: whitesmoke;
+    font-family: 'Roboto Mono';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    margin: 20px;
+    border-radius: 14px;
+    border: 2px solid red;
+    box-shadow: inset;
+}
+
+.navbar-brand img {
+    width: 150px;
+}
+
+.nav-item a {
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Roboto Mono';
+    background-color: #333333;
+    color: white;
+    -webkit-background-clip: text;
+    background-clip: text;
+  
+    transition: 0.4s ease-in-out;
+}
+
+.nav-item a:hover {
+    color: red;
+    font-size: 15px;
+    transition: 0.4s ease-in-out;
+}
+
+.sum {
+    background: red;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.sum:hover {
+    transition: 0.3s ease-in-out;
+    color: white;
+    background: rgba(246, 74, 74, 0.968);
+}
+
+.dropdown-item,
+.dropdown-menu {
+    background: #333333;
+    transition: 0.3s ease-in-out;
+}
+
+.dropdown-item,
+.dropdown-menu:hover {
+    background-color: #121212;
+    transition: 0.3s ease-in-out;
+}
+
+.navbar-toggler {
+    background: red;
+    border-color: orange;
+    border: 2px solid;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2c2c2c;
+    border: 1px solid #444;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 10px;
+    border: 2px solid #444;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: red #333333;
+}
+
+*::-webkit-scrollbar-track {
+    border: 1px solid #444;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.card {
+    flex: 1 1 calc(30% - 1rem);
+    box-sizing: border-box;
+    background: #333333;
+    transition: transform 0.4s ease-in-out;
+    border: 2px solid red;
+    margin: 0 10px;
+}
+
+@media (max-width: 700px) {
+    .card {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+.card:hover {
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+.cards-container:hover .card:not(:hover) {
+    filter: blur(2px);
+}
+
+.card-text {
+    font-family: 'Verdana';
+    font-size: 13px;
+    background-image: linear-gradient(90deg, rgb(255, 255, 255), rgba(255, 255, 255, 0.785));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 0.4s ease-in-out;
+}
+
+.text-boxes-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 20px auto;
+}
+
+.text-box {
+    background: #333333;
+    border: 2px solid red;
+    border-radius: 20px;
+    color: white;
+    flex: 1;
+    max-width: 300px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 10px; 
+}
+
+@media (max-width: 700px) {
+    .text-box {
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 700px) {
+    .text-boxes-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-box {
+        max-width: 100%;
+    }
+}
+
+.nube-text h2 {
+    margin: 20vh;
+    border: 11px solid orange;
+}
+
+@media (max-width: 700px) {
+    .nube-text {
+        margin: 10vh 5vw; 
+    }
+}
+
+.footer {
+    background-color: #333333;
+    border: 2px solid red;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin: 20px;
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+
+.footer-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logocolab {
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.soporte {
+    text-decoration: none;
+    color: red;
+}
+
+.soporte:hover {
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .footer-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logocolab {
+        width: 80px;
+    }
+}
+
+
+/*Trabajos*/
+
+.trabajos-text h2{
+    background: #333333;
+    border: 2px solid red;
+    border-radius: 20px;
+    color: white;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 5vh;
+    padding: 2vh;
+    font-size: 16px;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 20px; 
+}
+
+/* Ajustes del carrusel */
+.carousel {
+    width: 100%;
+}
+
+.carousel-inner {
+    justify-content: center;
+}
+
+
+.carousel-item img {
+    width: 100px;
+}
+
+.trabajos-text p{
+    background: #333333;
+    border: 2px solid red;
+    border-radius: 20px;
+    color: white;
+    padding: 2vh;
+    font-size: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+
+}
+
+
+
+/* Ajustes del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+/* Indicadores centrados */
+.carousel-indicators {
+    justify-content: center;
+}
+
+.carousel-indicators button {
+    background-color: red;
+}
+
+.carousel-item img {
+    border: 2px solid red;
+    border-radius: 20px;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.carousel-captions {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.card-info {
+    background-color: #333333;
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    color: white;
+}
+
+.card-info .logo {
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px; 
+}
+
+.card-info .img-1 {
+    width: 50%;
+    border: red 5px solid;
+    height: auto;
+    border-radius: 30px;
+    display: block;
+    margin: 0 auto;
+}
+
+.card-detalles {
+    margin-top: 10px;
+}
+
+.card-detalles p {
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+  }
+  
+  .button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #333333;
+    border: none;
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 0px 2px red;
+    cursor: pointer;
+    transition-duration: 0.6s;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .svgIcon {
+    width: 12px;
+    transition-duration: 0.3s;
+  }
+  
+  .svgIcon path {
+    fill: white;
+  }
+  
+  .button:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: red;
+    align-items: center;
+  }
+  
+  .button:hover .svgIcon {
+    transition-duration: 0.3s;
+    transform: translateY(-200%);
+  }
+  
+  .button::before {
+    position: absolute;
+    bottom: -20px;
+    content: "Volver";
+    color: white;
+    font-size: 0px;
+  }
+  
+  .button:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    bottom: unset;
+    transition-duration: 0.3s;
+  }
+  
+  /*styles de equipo*/
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    max-width: 350px;
+    background-color: #222;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+    transition: border-color 0.7s;
+  }
+  
+
+  
+  .card:hover {
+    border-color: red;
+  
+  }
+  
+  .card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-family: 'Verdana';
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+  
+  .card-text {
+    margin-bottom: 15px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.7s;
+    font-weight: bold;
+  }
+  .btn-cart {
+    margin-left: 2200px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.7s;
+  }
+  
+  .btn-cart:hover {
+    background-color: #0056b3; 
+  }
+  
+  .btn-cart i {
+    margin-right: 5px; 
+  }
+  
+  .card:hover .card-text{
+    opacity: 1;
+    transition: 0.7s;
+  }
+  
+  .blur {
+    filter: blur(5px);
+  }
+  .highlight {
+    filter: none !important;
+    transform: scale(1.05);
+    transition: transform 0.3s;
+  }
+  
+  @media (max-width: 992px) {
+    .card {
+      flex: 1 1 calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .card {
+      flex: 1 1 calc(100% - 20px);
+    }
+  }
+
+.form {
+    --input-text-color: #fff;
+    --input-bg-color: #283542;
+    --focus-input-bg-color: transparent;
+    --text-color: #949faa;
+    --active-color: #1b9bee;
+    --width-of-input: 200px;
+    --inline-padding-of-input: 1.2em;
+    --gap: 0.9rem;
+  }
+  .form {
+    font-size: 0.9rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: var(--width-of-input);
+    position: relative;
+    isolation: isolate;
+  }
+  .fancy-bg {
+    position: absolute;
+    width: 100%;
+    inset: 0;
+    background: var(--input-bg-color);
+    border-radius: 30px;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  label {
+    width: 100%;
+    padding: 0.8em;
+    height: 40px;
+    padding-inline: var(--inline-padding-of-input);
+    display: flex;
+    align-items: center;
+  }
+  
+  .search,.close-btn {
+    position: absolute;
+  }
+  .search {
+    fill: var(--text-color);
+    left: var(--inline-padding-of-input);
+  }
+  svg {
+    width: 17px;
+    display: block;
+  }
+  .close-btn {
+    border: none;
+    right: var(--inline-padding-of-input);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 0.1em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--active-color);
+    opacity: 0;
+    visibility: hidden;
+  }
+  .input {
+    color: var(--input-text-color);
+    width: 100%;
+    margin-inline: min(2em,calc(var(--inline-padding-of-input) + var(--gap)));
+    background: none;
+    border: none;
+  }
+  
+  .input:focus {
+    outline: none;
+  }
+  
+  .input::placeholder {
+    color: var(--text-color)
+  }
+  .input:focus ~ .fancy-bg {
+    border: 1px solid var(--active-color);
+    background: var(--focus-input-bg-color);
+  }
+  .input:focus ~ .search {
+    fill: var(--active-color);
+  }
+  .input:valid ~ .close-btn {
+    opacity: 1;
+    visibility: visible;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
+}
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.labels {
+    color: white;
+    margin-left: 5px;
+}
+
+.input-soporte {
+  border: 2px solid #ccc;
+  padding: 8px;
+  border-radius: 5px;
+  width: calc(100% - 20px);
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.input-soporte:focus {
+  border-color: red; 
+}
+
+textarea.input-soporte {
+  resize: vertical;
+}
+
+.btn-soporte {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-soporte:hover {
+  background-color: darkred;
+}
+
+.soporte-container {
+  background-color: #333333;
+  border: 2px solid red;
+  padding: 20px;
+  width: 70%;
+  max-width: 600px; 
+  margin: 20px auto; 
+  border-radius: 20px; 
+  box-sizing: border-box; 
+}
+
+.logito {
+  text-align: center; 
+  margin-bottom: 20px; 
+}
+
+.logito img {
+  max-width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    display: block;
+}
