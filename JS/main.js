@@ -1,17 +1,12 @@
 $(document).ready(function() {
-    updateLoginStatus();
-    
+    actualizarEstadoLogin();
+ /* INTENTO DE BASE DE DATOS XD JHAJA */   
     $('#login').click(function(event) {
-        if (isLoggedIn()) {
-            logout();
-            updateLoginStatus();
+        if (estaLogueado()) {
+            cerrarSesion();
+            actualizarEstadoLogin();
             event.preventDefault();
         }
-    });
-
-    $('#supportForm').submit(function(e) {
-        e.preventDefault();
-        validateSupportForm();
     });
 
     $('.message a').click(function() {
@@ -19,32 +14,90 @@ $(document).ready(function() {
     });
 });
 
-function isLoggedIn() {
-    return localStorage.getItem('loggedIn') === 'true';
+function estaLogueado() {
+    return localStorage.getItem('logueado') === 'true';
 }
 
-function updateLoginStatus() {
-    const loginLink = $('#login');
-    if (isLoggedIn()) {
-        loginLink.text('Desconectar');
-        loginLink.attr('href', 'login.html');
+function actualizarEstadoLogin() {
+    const enlaceLogin = $('#login');
+    if (estaLogueado()) {
+        enlaceLogin.text('Desconectar');
+        enlaceLogin.attr('href', 'login.html');
     } else {
-        loginLink.text('Iniciar Sesión');
-        loginLink.attr('href', 'login.html');
+        enlaceLogin.text('Iniciar Sesión');
+        enlaceLogin.attr('href', 'login.html');
     }
 }
 
-function logout() {
-    localStorage.setItem('loggedIn', 'false');
+function cerrarSesion() {
+    localStorage.setItem('logueado', 'false');
 }
 
+
+/* VALIDACIONES */
+function loguear() {
+    let email = $("#correo").val();
+    let contrasena = $("#contraseña").val(); 
+    let error = $("#error"); 
+
+    if (email === "" || contrasena === "") {
+        error.text("Por favor, completa todos los campos");
+        setTimeout(function () {
+            error.text("");
+        }, 2000);
+        return;
+    }
+
+    if (contrasena.length < 8) {
+        error.text("La contraseña debe ser mayor a 8 caracteres");
+        $("#contraseña").val("");
+        setTimeout(function () {
+            error.text("");
+        }, 2000);
+        return;
+    }
+
+    if (!email.includes("@")) {
+        error.text("Ingrese un correo con @ válido");
+        $("#correo").val("");
+        setTimeout(function () {
+            error.text("");
+        }, 2000);
+        return;
+    }
+
+    const caracteresInvalidosRegex = /[#!$%^&*()+=\[\]{};':"\\|,<>\/?]+/;
+    if (caracteresInvalidosRegex.test(email)) {
+        error.text("Caracteres inválidos en el correo");
+        $("#correo").val("");
+        setTimeout(function () {
+            error.text("");
+        }, 2000);
+        return;
+    }
+
+    if ((email === "alanbrito@gmail.com" && contrasena === "123456789") || (email === "german@gmail.com" && contrasena === "123456789")) {
+        localStorage.setItem('logueado', 'true');
+        window.location = "index.html";
+    } else {
+        error.text("Los datos ingresados son incorrectos");
+        $("#correo").val("");
+        $("#contraseña").val("");
+
+        setTimeout(function () {
+            error.text("");
+        }, 2000);
+    }
+}
+
+/* SISTEMA DE BUSQUEDA */ 
 function BuscadorHtml(event) {
     event.preventDefault();
     
-    var searchInput = $('#termino');
-    var searchText = searchInput.val().toLowerCase();
+    var terminoBusqueda = $('#termino');
+    var textoBusqueda = terminoBusqueda.val().toLowerCase();
 
-    switch (searchText) {
+    switch (textoBusqueda) {
         case "inicio":
             window.location.href = "index.html";
             break;
@@ -61,88 +114,10 @@ function BuscadorHtml(event) {
             window.location.href = "soporte.html";
             break;
         default:
-            searchInput.attr('placeholder', 'No existe categoria');
+            terminoBusqueda.attr('placeholder', 'No existe categoría');
             setTimeout(function() {
-                searchInput.attr('placeholder', 'Buscar por categoria');
+                terminoBusqueda.attr('placeholder', 'Buscar por categoría');
             }, 2000);
-            searchInput.val('');
-    }
-}
-
-function loguear() {
-    let username = $(".login-form input[type='email']").val();
-    let password = $(".login-form input[type='password']").val();
-    let error = $("#error");
-
-    if (username === "" || password === "") {
-        error.text("Por favor, completa todos los campos");
-        setTimeout(function () {
-            error.text("");
-        }, 2000);
-        return;
-    }
-
-    if (password.length < 8) {
-        error.text("La contraseña debe ser mayor a 8 caracteres");
-        $(".login-form input[type='password']").val("");
-        setTimeout(function () {
-            error.text("");
-        }, 2000);
-        return;
-    }
-
-    if ((username === "alanbrito@gmail.com" && password === "123456789") || (username === "german@gmail.com" && password === "123456789")) {
-        localStorage.setItem('loggedIn', 'true');
-        window.location = "index.html";
-    } else {
-        error.text("Los datos ingresados son incorrectos");
-        $(".login-form input[type='email']").val("");
-        $(".login-form input[type='password']").val("");
-
-        setTimeout(function () {
-            error.text("");
-        }, 2000);
-    }
-}
-
-function validateSupportForm() {
-    let isValid = true;
-    const correo = $('#correo').val();
-    const nombre = $('#nombre').val();
-    const mensaje = $('#mensaje').val();
-    
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const nameRegex = /^[a-zA-Z\s]{30,}$/;
-    const invalidCharsRegex = /[#!<>.{}+]/;
-    
-    $('#correo-error').text('');
-    $('#nombre-error').text('');
-    $('#mensaje-error').text('');
-    
-    if (!correo) {
-        isValid = false;
-        $('#correo-error').text('Por favor, ingrese su correo.');
-    } else if (!emailRegex.test(correo)) {
-        isValid = false;
-        $('#correo-error').text('Ingrese un correo válido.');
-    }
-
-    if (!nombre) {
-        isValid = false;
-        $('#nombre-error').text('Por favor, ingrese su nombre.');
-    } else if (nameRegex.test(nombre)) {
-        isValid = false;
-        $('#nombre-error').text('El nombre no debe contener números y debe tener más de 30 caracteres.');
-    } else if (invalidCharsRegex.test(nombre)) {
-        isValid = false;
-        $('#nombre-error').text('El nombre contiene caracteres inválidos.');
-    }
-
-    if (!mensaje) {
-        isValid = false;
-        $('#mensaje-error').text('Por favor, ingrese un mensaje.');
-    }
-
-    if (isValid) {
+            terminoBusqueda.val('');
     }
 }

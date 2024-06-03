@@ -1,11 +1,11 @@
 $(document).ready(function() {
     const cardData = [
-        { img: '../IMG/bujias.jpg', title: 'Bujias', description: '' },
-        { img: '../IMG/NeumaticosMichelin.png', title: 'Neumaticos Michelin', description: '' },
-        { img: '../IMG/porta.png', title: 'Porta moviles', description: '' },
-        { img: '../IMG/retrovisor.png', title: 'Retrovisores', description: '' },
-        { img: '../IMG/plumillas.png', title: 'Plumillas', description: '' },
-        { img: '../IMG/parlantes.png', title: 'Parlantes', description: '' }
+        { img: '../IMG/bujias.jpg', title: 'Bujias', description: 'Precio $20.000' },
+        { img: '../IMG/NeumaticosMichelin.png', title: 'Neumaticos Michelin', description: 'Precio $20.000' },
+        { img: '../IMG/porta.png', title: 'Porta moviles', description: 'Precio $56.000' },
+        { img: '../IMG/retrovisor.png', title: 'Retrovisores', description: 'Precio $15.000' },
+        { img: '../IMG/plumillas.png', title: 'Plumillas', description: 'Precio $10.000' },
+        { img: '../IMG/parlantes.png', title: 'Parlantes', description: 'Precio $70.000' }
     ];
 
 

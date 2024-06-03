@@ -14,8 +14,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <!-- JavaScript -->
-    <script src="../JS/main.js" defer></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-dark">
@@ -61,33 +59,31 @@
         <div class="logito">
             <img src="../IMG/logote.png" alt="Logo">
         </div>
-        <form action="https://formspree.io/f/mrgnwzno"
-        method="POST">
+        <form action="https://formspree.io/f/mrgnwzno" method="POST">
             <label class="labels" for="correo">Correo Personal</label>
-            <input class="input-soporte" type="email" id="correo" name="correo_personal" required>
+            <input class="input-soporte" type="email" id="correo" name="correo" required>
             <span id="correo-error" class="error-message"></span>
             <label class="labels" for="nombre">Nombre</label>
             <input class="input-soporte" type="text" id="nombre" name="nombre" required>
             <span id="nombre-error" class="error-message"></span>
-            <label class="labels" for="correo_empresa">Para: taller.makween@mec.com</label>
+            <label class="labels" for="correo-empresa">Para: taller.makween@mec.com</label>
             <label class="labels" for="mensaje">Soporte</label>
             <textarea class="input-soporte" id="mensaje" name="mensaje" rows="5"></textarea>
             <span id="mensaje-error" class="error-message"></span>
-            <button class="btn-soporte" type="submit">Enviar</button>
+            <button class="btn-soporte" type="submit" id="enviarFormulario(event)">Enviar</button>
         </form>
     </div>
-  <footer class="footer">
-    <div class="container-fluid">
-        <div class="footer-row">
-            <p>Contacto</br>Telefono: +56910111213</br>Correo: taller.makween@mec.com</br>Soporte para cliente: <a class="soporte" href="soporte.html">Soporte</a></p>
-            
-            <p>Servicios:<a class="soporte" href="soporte.html"> Inicio</a><a class="soporte" href="soporte.html"> Trabajos</a><a class="soporte" href="soporte.html"> Trabajadores</a><a class="soporte" href="soporte.html"> Ventas</a><p>@ 2024 Rayo Makween Derechos Reservados</p></p>
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="footer-row">
+                <p>Contacto</br>Telefono: +56910111213</br>Correo: taller.makween@mec.com</br>Soporte para cliente: <a class="soporte" href="soporte.html">Soporte</a></p>
+                
+                <p>Servicios:<a class="soporte" href="soporte.html"> Inicio</a><a class="soporte" href="soporte.html"> Trabajos</a><a class="soporte" href="soporte.html"> Trabajadores</a><a class="soporte" href="soporte.html"> Ventas</a><p>@ 2024 Rayo Makween Derechos Reservados</p></p>
+            </div>
+            <div class="footer-row">
+                <img class="logocolab" src="../IMG/logote.png">
+            </div>
         </div>
-        <div class="footer-row">
-            <img class="logocolab" src="../IMG/logote.png">
-        </div>
-    </div>
-</footer>
-
+    </footer>
 </body>
 </html>
